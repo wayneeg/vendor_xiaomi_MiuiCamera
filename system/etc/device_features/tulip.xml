@@ -25,7 +25,7 @@
     <!--whether the device supports page layout-->
     <bool name="support_page_layout">false</bool>
     <!--whether the device supports record param-->
-    <bool name="support_record_param">false</bool>
+    <bool name="support_record_param">true</bool>
     <!--whether the device supports interview record param-->
     <bool name="support_interview_record_param">true</bool>
     <!--whether the device supports stereo record-->
@@ -127,7 +127,7 @@
     <!-- support nfc -->
     <bool name="support_nfc">false</bool>
     <!--whether support aohdr in camera-->
-    <bool name="support_camera_aohdr">true</bool>
+    <bool name="support_camera_aohdr">false</bool>
     <!--whether support high frame recording in camera-->
     <bool name="support_camera_hfr">true</bool>
     <!--whether support chroma flash in camera-->
@@ -135,15 +135,19 @@
     <!--whether support object tracking in camera-->
     <bool name="support_object_track">false</bool>
     <!--whether support 4k recording in camera-->
-    <bool name="support_camera_4k_quality">true</bool>
+    <bool name="support_camera_4k_quality">false</bool>
     <!--whether support audio focus recording in camera-->
     <bool name="support_camera_audio_focus">false</bool>
     <!--whether use morpho lib in camera-->
     <bool name="is_camera_use_morpho_lib">true</bool>
+    <!--mfnr is opened by default, mfnr and hht are mutually exclusive, so hide hht menu-->
+    <bool name="is_camera_hide_hht_menu">true</bool>
     <!--whether replace a lower cost effect to avoid preview lag-->
     <bool name="is_camera_replace_higher_cost_effect">false</bool>
     <!--whether support manual focus/exposure_time in camera-->
     <bool name="support_camera_manual_function">true</bool>
+    <!--whether support camera continuous iso mode-->
+    <bool name="support_camera_continuous_iso">true</bool>
     <!--whether capture when user press down the shutter in camera instead of left the shutter-->
     <bool name="support_camera_press_down_capture">true</bool>
     <!--whether support capture in torch mode in camera-->
@@ -165,9 +169,13 @@
     <!--whether add watermark in camera app-->
     <bool name="is_camera_app_water_mark">true</bool>
     <!--whether support tiltshift  in camera-->
-    <bool name="support_camera_tilt_shift">false</bool>
+    <bool name="support_camera_tilt_shift">true</bool>
+    <!--whether support magic mirror in camera-->
+    <bool name="support_camera_magic_mirror">true</bool>
+    <!--whether support groupshot mode in camera-->
+    <bool name="support_camera_groupshot">true</bool>
     <!--whether support snap with screen off  in camera-->
-    <bool name="support_camera_quick_snap">false</bool>
+    <bool name="support_camera_quick_snap">true</bool>
     <!-- whether the device app permission detail show in provision-->
     <bool name="support_provision_app_permission">true</bool>
     <!--whether support pre-installed application-->
@@ -182,30 +190,28 @@
     <string name="release_time">1470758400000</string>
     <!--0:not support 1:close gamut 2:close ce-->
     <integer name="screen_standard_mode">2</integer>
-    <!--Flag of reduce preview size in camera(1:reduce, 0:do not reduce; 1st byte:rear camera, 2nd byte:front camera, 3rd byte:rear video, 4th byte:front video )-->
-    <integer name="camera_reduce_preview_flag">14</integer>
+    <!--Flag of reduce preview size in camera(1:reduce, 0:do not reduce; (low->high)1st byte:rear camera, 2nd byte:front camera, 3rd byte:rear video, 4th byte:front video )-->
+    <integer name="camera_reduce_preview_flag">2</integer>
     <!--max number of burst images one time -->
     <integer name="burst_shoot_count">20</integer>
     <!--support front flash or not-->
-    <bool name="support_front_flash">true</bool>
+    <bool name="support_front_flash">false</bool>
     <!--b0:flash b1:hdr b2:motion b3:night-->
     <integer name="camera_supported_asd">11</integer>
+    <!--whether rotate the final image in camera isp-->
+    <bool name="is_camera_isp_rotated">false</bool>
     <!--front asd b0:flash b1:hdr b2:motion b3:night-->
     <integer name="camera_supported_front_asd">10</integer>
     <!-- front hht enhance-->
     <bool name="support_front_hht_enhance">true</bool>
     <!--whether front sensor support remosic-->
-    <bool name="is_front_remosic_sensor">true</bool>
+    <bool name="is_front_remosic_sensor">false</bool>
     <!--max cpu freq of the device-->
     <integer name="cpu_max_freq">200</integer>
     <!--total steps number of camera compensation-->
     <float name="camera_exposure_compensation_steps_num">12.0</float>
     <!--Left margin of count down parent layout for front camera-->
     <float name="camera_front_count_down_margin">0.3177</float>
-    <!--When these apps access camera, force use higher size -->
-    <string-array name="remove_lower_perview_size_list">
-        <item>com.tencent.mm</item>
-    </string-array>
     <!--camera continuous shot callback class name-->
     <string name="camera_continuous_shot_callback_class">ContinuousShotCallback</string>
     <!--camera continuous shot callback setter method name-->
@@ -268,9 +274,10 @@
         <item>/system/data-app/MiDrive/MiDrive.apk</item>
         <item>/system/data-app/MiuiDriveMode/MiuiDriveMode.apk</item>
     </string-array>
+    <!--whether surpport paper mode animation-->
+    <bool name="support_papermode_animation">true</bool>
     <!-- whether camera support AI lens entry -->
     <bool name="camera_support_ai_lens">true</bool>
-    <bool name="camera_supported_ai_scene">true</bool>
     <!--whether show my device-->
     <bool name="support_my_device">true</bool>
     <!--whether round corner-->
@@ -285,13 +292,16 @@
     <!-- Support Sign Verify In Cust Partition-->
     <bool name="support_sign_verify_in_cust">true</bool>
     <!--whether taking 18x9 ratio screen in camera-->
-    <bool name="is_18x9_ratio_screen">true</bool>
+    <bool name="is_18x9_ratio_screen">false</bool>
     <!--whether support portrait in camera-->
     <bool name="is_support_portrait">true</bool>
     <!--whether taking legacy face beauty in camera-->
     <bool name="is_legacy_face_beauty">false</bool>
     <!--whether front camera support hdr or not-->
     <bool name="support_front_hdr">true</bool>
+    <!--hdr default value, off:1 on:2 auto:3-->
+    <integer name="support_camera_hdr_default_value">1</integer>
+    <integer name="support_camera_front_hdr_default_value">1</integer>
 　　<!--whether front camera support hht or not-->
     <bool name="support_front_hht">true</bool>
     <!--whether front camera support bokeh or not-->
@@ -309,28 +319,29 @@
     <bool name="enable_algorithm_in_file_suffix">false</bool>
     <!--whether enable face detection in video and funmode or not-->
     <bool name="support_camera_video_face_detection">true</bool>
-    <!-- Camera HDR default value -->
-    <integer name="support_camera_hdr_default_value">3</integer>
-    <integer name="support_camera_front_hdr_default_value">1</integer>
-    <!--whether camera support portrait mode switch -->
+    <bool name="camera_supported_scene">false</bool>
+    <bool name="camera_supported_ai_scene">true</bool>
+    <bool name="camera_supported_front_ai_scene">true</bool>
+    <bool name="camera_portrait_mode_supported_ai_scene">true</bool>
     <bool name="camera_is_support_portrait_switch">true</bool>
-    <!--whether process clcc in hfp pending state-->
-    <bool name="process_clcc_in_pending_state">false</bool>
-    <!-- device sar value -->
-    <float name="device_sar">1.188</float>
+    <!--whether support camera video high frame-->
+    <bool name="support_camera_video_high_frame">true</bool>
+    <!--whether support camera super resolution-->
+    <bool name="support_super_resolution">true</bool>
+    <bool name="is_full_size_effect">true</bool>
+    <!--whether enable front screen night or not-->
+    <bool name="support_camera_screen_light">true</bool>
+    <!--front screen night ahead time when capture-->
+    <integer name="support_camera_screen_light_ahead_time">1000</integer>
+    <!-- device head sar value -->
+    <float name="device_head_sar">0.844</float>
+    <!-- device body sar value -->
+    <float name="device_body_sar">1.048</float>
     <!--whether support freeform mode in game mode-->
     <bool name="support_freeform_reply">true</bool>
-    <!--wether support ime xiaoai voice input-->
-    <bool name="surpport_ime_xiaoai_voice">true</bool>
-    <!--whether support square mode in camera-->
-    <bool name="support_camera_square_mode">true</bool>
-    <!--whether support magic mirror in camera-->
-    <bool name="support_camera_magic_mirror">true</bool>
-    <!-- whether camera supports paralell process -->
-    <bool name="support_parallel_process">true</bool>
-    <!--whether support tele asd night in camera-->
-    <bool name="is_support_tele_asd_night">true</bool>
-    <!-- From android one -->
-    <bool name="is_android_one_device">true</bool>
-    <bool name="front_fingerprint_sensor">true</bool>
+    <!-- whether support beauty menu in back portrait mode-->
+    <bool name="support_camera_beauty_menu_in_back_portrait_mode">true</bool>
+    <bool name="support_camera_adv_beauty_front_bokeh">false</bool>
 </features>
+
+
