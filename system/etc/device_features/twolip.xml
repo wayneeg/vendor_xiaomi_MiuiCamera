@@ -184,8 +184,6 @@
 	<bool name="support_ota_validate">true</bool>
 	<!--wheater support show credentials-->
 	<bool name="support_credentials">true</bool>
-	<!--the vendor feature, it's value may be qcom,mediatek,leadcore or nvidia-->
-	<string name="vendor">qcom</string>
 	<!--release time for the device, should be an unix timestamp-->
 	<string name="release_time">1470758400000</string>
 	<!--0:not support 1:close gamut 2:close ce-->
